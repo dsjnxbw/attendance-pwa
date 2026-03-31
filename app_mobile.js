@@ -213,12 +213,25 @@ function rowElement(r, idx, kind) {
 
 function parseStoreDate(value) {
     if (!value) return Number.POSITIVE_INFINITY;
-    const d = new Date(String(value).replace(" ", "T"));
-    const t = d.getTime();
+    const s = String(value).trim();
+
+    // Deterministic parse for "YYYY-MM-DD HH:MM" / "YYYY-MM-DDTHH:MM".
+    const m = s.match(/^(\d{4})-(\d{1,2})-(\d{1,2})[ T](\d{1,2}):(\d{1,2})/);
+    if (m) {
+        const y = Number(m[1]);
+        const mon = Number(m[2]) - 1;
+        const d = Number(m[3]);
+        const h = Number(m[4]);
+        const mi = Number(m[5]);
+        return new Date(y, mon, d, h, mi, 0, 0).getTime();
+    }
+
+    const t = new Date(s.replace(" ", "T")).getTime();
     return Number.isNaN(t) ? Number.POSITIVE_INFINITY : t;
 }
 
 function sortRecordsInPlace() {
+    // From old to new (earlier -> later)
     state.overtime_records.sort((a, b) => parseStoreDate(a.start) - parseStoreDate(b.start));
     state.leave_records.sort((a, b) => parseStoreDate(a.start) - parseStoreDate(b.start));
 }
