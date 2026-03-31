@@ -1,4 +1,4 @@
-const CACHE_NAME = "ot-mobile-v5";
+const CACHE_NAME = "ot-mobile-v6";
 const ASSETS = [
     "./",
     "./index.html",

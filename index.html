@@ -12,40 +12,22 @@
 
 <body>
     <div class="grid-overlay"></div>
-    <div class="noise-overlay"></div>
     <div class="bg-blur bg1"></div>
     <div class="bg-blur bg2"></div>
-    <div class="bg-blur bg3"></div>
 
     <header class="topbar">
         <div class="brand-shell">
             <div class="brand">OT</div>
         </div>
         <div class="title-block">
-            <p class="eyebrow">CHRONO SHIFT CONSOLE</p>
             <h1>加班与调休管理器</h1>
             <p id="todayText">今天</p>
         </div>
-        <div class="status-pill">OFFLINE CORE</div>
     </header>
 
     <main class="wrap">
-        <section class="hero-panel">
-            <div>
-                <p class="eyebrow">PERSONAL TIME LEDGER</p>
-                <h2>更锐利的时间视图，更直接的调休控制。</h2>
-                <p class="hero-copy">支持本地离线存储、JSON 导入导出、最新记录优先显示，并针对手机操作做了滚动与触控优化。</p>
-            </div>
-            <div class="hero-tags">
-                <span>NEWEST FIRST</span>
-                <span>OFFLINE READY</span>
-                <span>PWA ACTIVE</span>
-            </div>
-        </section>
-
         <section class="card card-panel card-ot">
             <div class="panel-head">
-                <p class="panel-kicker">OVERTIME INPUT</p>
                 <h2>加班登记</h2>
             </div>
             <div class="grid2">
@@ -62,7 +44,6 @@
 
         <section class="card card-panel card-lv">
             <div class="panel-head">
-                <p class="panel-kicker">LEAVE INPUT</p>
                 <h2>调休登记</h2>
             </div>
             <div class="grid2">
@@ -102,9 +83,7 @@
         <section class="card card-panel list-card">
             <div class="list-head">
                 <div>
-                    <p class="panel-kicker">OVERTIME LOG</p>
                     <h3>加班记录</h3>
-                    <p class="list-note">最新记录优先显示，超过 5 条自动启用滚动。</p>
                 </div>
                 <button id="delOtBtn" class="btn danger">删除选中</button>
             </div>
@@ -114,9 +93,7 @@
         <section class="card card-panel list-card">
             <div class="list-head">
                 <div>
-                    <p class="panel-kicker">LEAVE LOG</p>
                     <h3>调休记录</h3>
-                    <p class="list-note">保留原始规则说明，便于核对跨日与无效时段。</p>
                 </div>
                 <button id="delLvBtn" class="btn danger">删除选中</button>
             </div>
