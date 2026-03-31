@@ -3,8 +3,8 @@
     "short_name": "OT调休",
     "start_url": "./index.html",
     "display": "standalone",
-    "background_color": "#eef3fb",
-    "theme_color": "#0b5ed7",
+    "background_color": "#07111f",
+    "theme_color": "#07111f",
     "description": "移动端加班与调休记录工具，支持统计、导入导出、本地离线保存",
     "icons": [
         {
