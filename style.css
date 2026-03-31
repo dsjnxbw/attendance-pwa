@@ -227,6 +227,9 @@ input[type="datetime-local"] {
 .list {
     display: grid;
     gap: 8px;
+    max-height: 320px;
+    overflow-y: auto;
+    padding-right: 4px;
 }
 
 .row {

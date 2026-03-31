@@ -231,9 +231,9 @@ function parseStoreDate(value) {
 }
 
 function sortRecordsInPlace() {
-    // From old to new (earlier -> later)
-    state.overtime_records.sort((a, b) => parseStoreDate(a.start) - parseStoreDate(b.start));
-    state.leave_records.sort((a, b) => parseStoreDate(a.start) - parseStoreDate(b.start));
+    // From new to old (latest -> earliest)
+    state.overtime_records.sort((a, b) => parseStoreDate(b.start) - parseStoreDate(a.start));
+    state.leave_records.sort((a, b) => parseStoreDate(b.start) - parseStoreDate(a.start));
 }
 
 function render() {
