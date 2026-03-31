@@ -385,7 +385,15 @@ function init() {
     render();
 
     if ("serviceWorker" in navigator) {
-        navigator.serviceWorker.register("./sw.js").catch(() => { });
+        navigator.serviceWorker.register("./sw.js").then((reg) => {
+            // 监听 Service Worker 的更新消息
+            navigator.serviceWorker.addEventListener("message", (event) => {
+                if (event.data.type === "CACHE_UPDATED") {
+                    // 缓存已更新，延迟1秒后刷新页面
+                    setTimeout(() => window.location.reload(), 1000);
+                }
+            });
+        }).catch(() => { });
     }
 }
 
